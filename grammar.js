@@ -678,6 +678,7 @@ module.exports = grammar({
       $._dec_no_local,
       $.structure_strdec,
       $.local_strdec,
+      $.functor_fctdec,
     ),
 
     structure_strdec: $ => seq('structure', $._strbind),
@@ -814,7 +815,7 @@ module.exports = grammar({
     // ******************************************************** //
 
     _fctdec: $ => choice(
-      $.functor_fctdec,
+      prec(2, $.functor_fctdec),
     ),
     functor_fctdec: $ => seq('functor', $._fctbind),
     _fctbind: $ => mkSepBy1('and', $.fctbind),

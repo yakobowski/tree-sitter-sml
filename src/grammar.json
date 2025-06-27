@@ -4177,6 +4177,10 @@
         {
           "type": "SYMBOL",
           "name": "local_strdec"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "functor_fctdec"
         }
       ]
     },
@@ -5358,8 +5362,12 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "functor_fctdec"
+          "type": "PREC",
+          "value": 2,
+          "content": {
+            "type": "SYMBOL",
+            "name": "functor_fctdec"
+          }
         }
       ]
     },
