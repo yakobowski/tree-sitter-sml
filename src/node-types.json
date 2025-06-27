@@ -1192,7 +1192,7 @@
     }
   },
   {
-    "type": "fctapp_strexp",
+    "type": "fctapp_arg",
     "named": true,
     "fields": {
       "arg": {
@@ -1212,7 +1212,13 @@
             "named": true
           }
         ]
-      },
+      }
+    }
+  },
+  {
+    "type": "fctapp_strexp",
+    "named": true,
+    "fields": {
       "name": {
         "multiple": false,
         "required": true,
@@ -1223,6 +1229,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fctapp_arg",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1290,7 +1306,17 @@
   {
     "type": "fctid",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "longvid",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "fmrule",
@@ -2217,7 +2243,17 @@
   {
     "type": "sigid",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "longvid",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "sigid_sigexp",

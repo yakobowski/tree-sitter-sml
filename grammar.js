@@ -633,8 +633,8 @@ module.exports = grammar({
 
     strid: $ => choice($._alphaAlphaNumeric_ident),
     longstrid: $ => seq(repeat(seq($.strid, '.')), $.strid),
-    sigid: $ => choice($._alphaAlphaNumeric_ident),
-    fctid: $ => choice($._alphaAlphaNumeric_ident),
+    sigid: $ => choice($.longvid),
+    fctid: $ => choice($.longvid),
 
     // ******************************************************** //
     // Structure Expressions (Modules)
@@ -657,6 +657,10 @@ module.exports = grammar({
     constr_strexp: $ => seq($._strexp, choice(':', ':>'), $._sigexp),
     fctapp_strexp: $ => seq(
       field('name', $.fctid),
+      $.fctapp_arg,
+      repeat($.fctapp_arg),
+    ),
+    fctapp_arg: $ => seq( 
       '(',
       field('arg',
         choice(
@@ -666,6 +670,7 @@ module.exports = grammar({
       ),
       ')',
     ),
+
     let_strexp: $ => seq(
       'let',
       repeat(choice(';', field('dec', $._strdec))),

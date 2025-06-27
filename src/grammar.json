@@ -3967,7 +3967,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_alphaAlphaNumeric_ident"
+          "name": "longvid"
         }
       ]
     },
@@ -3976,7 +3976,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_alphaAlphaNumeric_ident"
+          "name": "longvid"
         }
       ]
     },
@@ -4079,6 +4079,22 @@
             "name": "fctid"
           }
         },
+        {
+          "type": "SYMBOL",
+          "name": "fctapp_arg"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "fctapp_arg"
+          }
+        }
+      ]
+    },
+    "fctapp_arg": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
           "value": "("
