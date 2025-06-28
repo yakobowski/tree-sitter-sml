@@ -1242,7 +1242,7 @@
     }
   },
   {
-    "type": "fctbind",
+    "type": "fctarg",
     "named": true,
     "fields": {
       "arg": {
@@ -1270,7 +1270,13 @@
             "named": true
           }
         ]
-      },
+      }
+    }
+  },
+  {
+    "type": "fctbind",
+    "named": true,
+    "fields": {
       "def": {
         "multiple": false,
         "required": true,
@@ -1301,6 +1307,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "fctarg",
+          "named": true
+        }
+      ]
     }
   },
   {

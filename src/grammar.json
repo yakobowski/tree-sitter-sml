@@ -5448,6 +5448,61 @@
           }
         },
         {
+          "type": "SYMBOL",
+          "name": "fctarg"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ":"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ":>"
+                    }
+                  ]
+                },
+                {
+                  "type": "FIELD",
+                  "name": "sig",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_sigexp"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "FIELD",
+          "name": "def",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_strexp"
+          }
+        }
+      ]
+    },
+    "fctarg": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "STRING",
           "value": "("
         },
@@ -5496,52 +5551,6 @@
         {
           "type": "STRING",
           "value": ")"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ":"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": ":>"
-                    }
-                  ]
-                },
-                {
-                  "type": "FIELD",
-                  "name": "sig",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "_sigexp"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "FIELD",
-          "name": "def",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_strexp"
-          }
         }
       ]
     },

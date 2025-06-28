@@ -826,6 +826,12 @@ module.exports = grammar({
     _fctbind: $ => mkSepBy1('and', $.fctbind),
     fctbind: $ => seq(
       field('name', $.fctid),
+      $.fctarg,
+      optional(seq(choice(':', ':>'), field('sig', $._sigexp))),
+      '=',
+      field('def', $._strexp),
+    ),
+    fctarg: $ => seq(
       '(',
       field('arg',
         choice(
@@ -834,9 +840,6 @@ module.exports = grammar({
         ),
       ),
       ')',
-      optional(seq(choice(':', ':>'), field('sig', $._sigexp))),
-      '=',
-      field('def', $._strexp),
     ),
 
     // ******************************************************** //
