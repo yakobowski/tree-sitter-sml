@@ -5444,7 +5444,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "fctid"
+            "name": "strid"
           }
         },
         {

@@ -1292,7 +1292,7 @@
         "required": true,
         "types": [
           {
-            "type": "fctid",
+            "type": "strid",
             "named": true
           }
         ]

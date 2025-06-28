@@ -825,7 +825,7 @@ module.exports = grammar({
     functor_fctdec: $ => seq('functor', $._fctbind),
     _fctbind: $ => mkSepBy1('and', $.fctbind),
     fctbind: $ => seq(
-      field('name', $.fctid),
+      field('name', $.strid),
       $.fctarg,
       optional(seq(choice(':', ':>'), field('sig', $._sigexp))),
       '=',
