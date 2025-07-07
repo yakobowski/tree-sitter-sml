@@ -665,11 +665,14 @@ module.exports = grammar({
       field('arg',
         choice(
           $._strexp,
-          repeat(choice(';', $._strdec)),
+          $.strdec_list
         ),
       ),
       ')',
     ),
+
+    strdec_list: $ =>
+      repeat1(seq($._strdec, optional(';'))),
 
     let_strexp: $ => seq(
       'let',

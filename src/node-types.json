@@ -1196,19 +1196,15 @@
     "named": true,
     "fields": {
       "arg": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": ";",
-            "named": false
-          },
-          {
-            "type": "_strdec",
+            "type": "_strexp",
             "named": true
           },
           {
-            "type": "_strexp",
+            "type": "strdec_list",
             "named": true
           }
         ]
@@ -2354,6 +2350,21 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "strdec_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "_strdec",
+          "named": true
+        }
+      ]
     }
   },
   {

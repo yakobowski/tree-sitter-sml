@@ -4110,20 +4110,8 @@
                 "name": "_strexp"
               },
               {
-                "type": "REPEAT",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ";"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "_strdec"
-                    }
-                  ]
-                }
+                "type": "SYMBOL",
+                "name": "strdec_list"
               }
             ]
           }
@@ -4133,6 +4121,30 @@
           "value": ")"
         }
       ]
+    },
+    "strdec_list": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_strdec"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "let_strexp": {
       "type": "SEQ",
